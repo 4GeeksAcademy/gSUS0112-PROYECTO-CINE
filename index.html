@@ -3,21 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World with Typescript</title>
+    <title>Reservas de Cine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="min-h-screen bg-slate-100 text-slate-900">
-    <main class="mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center gap-6 p-6">
-      <h1 class="text-4xl font-bold tracking-tight">Hello World with Typescript</h1>
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <main class="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-6 p-4 sm:p-8">
+      <header>
+        <h1 class="text-3xl font-extrabold tracking-tight text-amber-300 sm:text-4xl">Mapa de Sala</h1>
+        <p class="mt-2 text-sm text-slate-300 sm:text-base">
+          Haz clic sobre un asiento libre para reservarlo.
+        </p>
+      </header>
 
-      <section class="w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <img
-          src="/rigo-baby.jpg"
-          alt="Hello Rigo"
-          class="h-64 w-full bg-slate-50 object-contain p-2"
-        />
-        <div class="p-5">
-          <h2 class="text-xl font-semibold text-slate-900">Hello Rigo</h2>
-          <p id="app" class="mt-2 text-sm text-slate-600"></p>
+      <section class="grid gap-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 shadow-2xl sm:p-6">
+        <div class="flex flex-wrap items-center gap-3 text-sm">
+          <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 px-3 py-1 text-emerald-300">
+            <span class="h-3 w-3 rounded-sm bg-emerald-500"></span>
+            Libre (L)
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-rose-500/20 px-3 py-1 text-rose-300">
+            <span class="h-3 w-3 rounded-sm bg-rose-500"></span>
+            Ocupado (X)
+          </span>
+        </div>
+
+        <p id="resumen" class="text-sm font-medium text-slate-200"></p>
+        <p id="sugerencia" class="text-sm text-amber-300"></p>
+        <p id="mensaje" class="min-h-6 text-sm font-semibold text-sky-300"></p>
+
+        <div class="overflow-x-auto">
+          <div id="mapa-sala" class="min-w-max"></div>
         </div>
       </section>
     </main>
